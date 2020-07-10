@@ -29,7 +29,7 @@ cities = []
 
 def cityreader(cities=[]):
     import csv
-    with open("cityreader/cities.csv") as csvfile:
+    with open("cities.csv") as csvfile:
         citiesfile = csv.DictReader(csvfile)
 
         for row in citiesfile:
@@ -80,8 +80,9 @@ for c in cities:
 # Tucson: (32.1558,-110.8777)
 # Salt Lake City: (40.7774,-111.9301)
 
-input1 = map(float, input("Enter 1st Lat & Lon coordinates, seperated by a space:\n").split())
-input2 = map(float, input("Enter 2nd Lat & Lon coordinates, seperated by a space:\n").split())
+"""
+input1 = map(float, input("Enter 1st Lat & Lon coordinates,\nseperated by a space:\n").split())
+input2 = map(float, input("Enter 2nd Lat & Lon coordinates,\nseperated by a space:\n").split())
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # within will hold the cities that fall within the specified region
@@ -97,7 +98,8 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # Go through each city and check to see if it falls within 
     # the specified coordinates.
     for city in cities:
-        if city.lat and city.lon:
+        if city.lat (xyz) and city.lon (xyz):
             within.append(city)
 
     return within
+    """
