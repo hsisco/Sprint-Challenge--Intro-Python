@@ -1,3 +1,7 @@
+"""
+Test:
+python3 oop/oop2.py
+"""
 # To the GroundVehicle class, add method drive() that returns "vroooom".
 #
 # Also change it so the num_wheels defaults to 4 if not specified when the
@@ -19,8 +23,8 @@ class Motorcycle(GroundVehicle):
     def drive(self):
         return "BRAAAP!!"
         
-print(f"GV wheels: {GroundVehicle().num_wheels}")
-print(f"MC wheels: {Motorcycle().num_wheels}")
+# print(f"GV wheels: {GroundVehicle().num_wheels}")
+# print(f"MC wheels: {Motorcycle().num_wheels}")
 
 vehicles = [
     GroundVehicle(),
@@ -31,4 +35,4 @@ vehicles = [
 ]
 
 a = [i.drive() for i in vehicles]
-print(a)
+print(f"\nGroundVehicles go {a}\n")

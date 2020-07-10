@@ -1,5 +1,12 @@
+"""
+Test:
+python3 cityreader/cityreader.py
+"""
+# 
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, lat and lon (representing latitude and longitude).
+print("\n")
+
 class City:
     def __init__(self, name, lat, lon):
         self.name = name

@@ -1,3 +1,7 @@
+"""
+Test:
+python3 oop/oop1.py
+"""
 # Write classes for the following class hierarchy:
 #
 #  [Vehicle]->[FlightVehicle]->[Starship]
