@@ -1,6 +1,17 @@
+"""
+Test:
+python3 cityreader/cityreader.py
+"""
+# 
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, lat and lon (representing latitude and longitude).
+print("\n")
 
+class City:
+    def __init__(self, name, lat, lon):
+        self.name = name
+        self.lat = lat
+        self.lon = lon
 
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
@@ -17,17 +28,28 @@
 cities = []
 
 def cityreader(cities=[]):
-  # TODO Implement the functionality to read from the 'cities.csv' file
-  # For each city record, create a new City instance and add it to the 
-  # `cities` list
-    
+    import csv
+    with open("cities.csv") as csvfile:
+        citiesfile = csv.DictReader(csvfile)
+
+        for row in citiesfile:
+            for k,v in row.items():
+                if k == "city":
+                    city = v
+                elif k == "lat":
+                    lat = v
+                elif k == "lng":
+                    lon = v
+# For each city record, create a new City instance and add it to the `cities` list
+            cities.append(City(name=city, lat=float(lat), lon=float(lon)))
+
     return cities
 
 cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
-    print(c)
+    print(f"{c.name}: {c.lat}, {c.lon}")
 
 # STRETCH GOAL!
 #
@@ -58,14 +80,26 @@ for c in cities:
 # Tucson: (32.1558,-110.8777)
 # Salt Lake City: (40.7774,-111.9301)
 
-# TODO Get latitude and longitude values from the user
+"""
+input1 = map(float, input("Enter 1st Lat & Lon coordinates,\nseperated by a space:\n").split())
+input2 = map(float, input("Enter 2nd Lat & Lon coordinates,\nseperated by a space:\n").split())
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-  # within will hold the cities that fall within the specified region
-  within = []
+    # within will hold the cities that fall within the specified region
+    ll_lat = min((lat1), (lat2))
+    ll_lon = min((lon1), (lon2))
+    ur_lat = max((lat1), (lat2))
+    ur_lon = max((lon1), (lon2))
+    
+    within = []
 
-  # TODO Ensure that the lat and lon valuse are all floats
-  # Go through each city and check to see if it falls within 
-  # the specified coordinates.
+    # TODO Ensure that the lat and lon valuse are all floats
 
-  return within
+    # Go through each city and check to see if it falls within 
+    # the specified coordinates.
+    for city in cities:
+        if city.lat (xyz) and city.lon (xyz):
+            within.append(city)
+
+    return within
+    """
